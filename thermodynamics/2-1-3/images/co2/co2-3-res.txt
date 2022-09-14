@@ -1,0 +1,15 @@
+Number of measurements: 4
+
+Measured values:
+      X       Y
+      0       0
+      1      57
+      2     114
+      3     175
+
+
+Coefficients of y = k*x + b:
+k = 58.2
+b = -0.8
+k_dev = 0.489898
+b_dev = 0.547723
