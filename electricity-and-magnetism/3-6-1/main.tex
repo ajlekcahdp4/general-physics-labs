@@ -3,6 +3,7 @@
 \usepackage[russian]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{breqn}
 \usepackage{wrapfig}
 \usepackage{float}
 
@@ -61,7 +62,7 @@
 
 \begin{equation}
     c_n = \frac{1}{T}\int_0^T f(t)e^{-in\omega_0t}dt.
-    \label{cn}
+    \label{eq_cn}
 \end{equation}
 
 \subsubsection{Периодическая последовательность прямоугольных импульсов}
@@ -74,8 +75,27 @@
 \caption{Периодическая последовательность прямоугольных импульсов и её спектр(Для $\tau = \frac{T}{3}$).} 
 \label{sq_imp_example}
 \end{figure}
-Рассмотрим сигнал на рис \ref{sq_imp_example}
-.
+Рассмотрим сигнал на рис \ref{sq_imp_example} и найдём его спектр.
+Используя (\ref{eq_cn}) на интегрвале интегрирования \( -T/2 \le t \le T/2 \), с учётом того, что функция 
+\(f(t)\) отлична от нуля только лишь в области \( |t| < \tau/2 \) находим
+
+\begin{equation}
+    c_n = \frac{1}{T} \int_{-\tau/2}^{\tau/2} e^{-in\omega_0t}dt = \frac{\tau}{T} \cdot 
+    \frac{\sin (n\omega_0\tau/2)}{n\omega_0\tau/2} = \frac{\sin (\pi n\tau/T)}{\pi n}
+    \label{ep_cn_sq_imp}
+\end{equation}
+
+Пунктиром изображена огибающая кривая
+\begin{equation*}
+    C(\omega) = \frac{\tau}{T} \cdot \frac{\sin \omega \tau/2}{\omega\tau/2}
+\end{equation*}
+
+Полуширина \( \Delta \omega \) главного максимума этой функции определяется условием \( \sin \omega\tau/2 = 0 \):
+\begin{equation*}
+    \Delta\omega\cdot\tau = 2\pi
+\end{equation*}
+
+
 
 
 \subsubsection{Периодическая последовательность цугов гармонических колебаний}
@@ -83,26 +103,33 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{cug_imp_example.png}
-    \caption{Периодическая последовательность прямоугольных импульсов и её спектр.} 
-    \label{cug_imp_example}
+    \caption{Периодическая последовательность синусоидальных цугов и её спектр. (Здесь \(T/\tau = 4\))} 
+    \label{pic_cug_imp_example}
 \end{figure}
 
-Рассмотрим сигнал на рис \ref{cug_imp_example}. Это - цуги колебания \( A_0 \sin \left(\nu_0t\right) \)
-Снова пусть $T$ кратно $\tau$. Тогда Спектры последовательности идентичны прямоугольным импульсам, но
-сдвинуты на $\nu_0$. Соотношения неопределённости остаются прежними:
+Рассмотрим сигнал на рис \ref{pic_cug_imp_example}. Это - цуги колебания \( V_0\sin\omega_0t \).
+Из (\ref{eq_cn}) найдём \(c_n\) и для них:
 
-\[ \Delta\nu\tau \simeq 1 \]
-\[ \delta\nu T \simeq 1 \]
+\begin{multline}
+    c_n = \frac{2}{T}\int_{-\tau/2}^{\tau/2} V_0\cos(\omega_0t) \cdot \cos(n\Omega_1t)dt = \\
+    = V_0 \frac{\tau}{T}\left(\frac{\sin\left[(\omega_0 - n\Omega_1)\frac{\tau}{2}\right]}
+    {(\omega_0 - n\Omega_1)\frac{\tau}{2}} + \frac{\sin\left[(\omega_0 + n\Omega_1)\frac{\tau}{2}\right]}
+    {(\omega_0 + n\Omega_1)\frac{\tau}{2}} \right)
+    \label{eq_cn_cug}
+\end{multline}
+
+Тогда Спектры последовательности идентичны прямоугольным импульсам, но
+сдвинуты на $\omega_0$.
 
 \subsubsection{Амплитудно-модулированные колебания}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{AM_signal_example.png}
     \caption{Амплитудно-модулированный сигнал и его спектр.} 
-    \label{AM_sig_example}
+    \label{pic_am_sig_example}
 \end{figure}
 
-Рассмотрим (Рис. \ref{AM_sig_example}) гармонические колебания высокой частоты $\omega_0$, амплитуда которых
+Рассмотрим рис. \ref{pic_am_sig_example} гармонические колебания высокой частоты $\omega_0$, амплитуда которых
 медленно меняется по гармоническому закону с частотой $\Omega \ll \omega$.
 
 \[ s(t) = A_0\left[1 + m \cos \Omega t\right] \cos \omega_0 t \]
@@ -112,11 +139,46 @@
 в виде
 
 \[ m = \frac{A_{max} - A{min}}{A_{max} + A_{min}}. \]
+Легко переписать уравнение сигнала как:
 
-Отсюда можно легко переписать уравнение сигнала как:
+\begin{equation}
+    f(t) = A_0 \cos \omega_0t + \frac{A_0m}{2} \cos \left(\omega_0 + \Omega\right)t  + \frac{A_0m}{2} 
+    \cos \left(\omega_0 + \Omega\right)t.
+    \label{eq_sig_am}
+\end{equation}
 
-\[ s(t) = A_0 \cos \omega_0t + \frac{A_0m}{2} \cos \left(\omega_0 + \Omega\right)t  + \frac{A_0m}{2} 
-\cos \left(\omega_0 + \Omega\right)t.\]
+Спектр таких колебаний содержит 3 составляющие. Основная компонента представляет собой исходное немодулированное
+с несущей частотой \(\omega_0\) и амплитудой \(A_{cen} = A_0\) -- первое слагаемое в (\ref{eq_sig_am}); Боковые компоненты
+спектра  соответствуют гармоническим колебания с частотами \((\omega_0 + \Omega)\) и \((\omega_0 - \Omega)\) -- второе
+и третье слагаемые (\ref{eq_sig_am}). Амплитуды этих колебаний одинаковы и составляют \(m/2\) от амплитуды
+немодулированного колебания \( A_{side} = A_0m/2\)
+
+
+\subsubsection{Соотношения неопределённости}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{uncertainty.png}
+    \caption{Связь характерных масштабов спектра с характерными временами сигнала.} 
+    \label{pic_uncertainty}
+\end{figure}
+При рассмотрении примеров мы получили соотношение, связы­вающее между собой длительность \(\Delta t\)сигнала с шириной
+\(\Delta\omega\) его спектра:
+
+\begin{equation}
+    \Delta\omega\cdot\Delta t \sim 2\pi
+    \label{uncertainty}
+\end{equation}
+
+Оказывается, это соотношение имеет весьма универсальный харак­тер. Оно остаётся справедливым
+по порядку величины для произволь­ного сигнала \(f(t)\). Например, рассмотрим ограниченную последовательность
+периодических импульсов с полной длительностью \(t_0\),  периодом \(T \ll t0\) и длительностью каждого импульса
+\(\tau \ll T\). Сигнал и его спектр пред­ставлены на рис. \ref{pic_uncertainty} На спектре видно три характерных
+масштаба частоты: масштаб \(\Delta\omega\tau = 2\pi/\tau\) -- это характерная ширина спектра, масштаб \(\Delta\omega T = 
+2\pi\tau\) -- расстояние между соседними спектральными пиками, и наконец наименьший мас­штаб частоты, соответствующий
+наибольшему характерному времени \(t_0\),определяет ширину каждого пика \(\Delta\omega_0 = 2\pi/t_0\).
+
+
+
 
 \section{Работа}
 
