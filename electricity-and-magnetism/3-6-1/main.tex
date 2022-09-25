@@ -182,7 +182,7 @@
 
 \section{Работа}
 
-\subsection{Исследование спектра периодической последовательности прямоугольных импульсов}
+\subsection{A. Исследование спектра периодической последовательности прямоугольных импульсов}
 
 Устанавливаем на генераторе прямоугольные импульсы с \( \nu_{rep} = 1kHz \) и длительностью импульса
 \( \tau = 100uS \). Получаем на экране спектр сигнала и, изменяя поочереди $\tau$ и $\nu_{rep}$ будем
@@ -208,6 +208,139 @@
     \caption{Спектр при \( \nu_{rep} = 2 kHz, \tau = 100uS \)} 
     \label{spec_3}
 \end{figure}
+
+Проведём изерения зависимости ширины спектра от длительности импульса при частоте повторения \( \nu_{rep} = 1kHz \)
+
+\begin{table}[H]
+    \centering
+    \label{tab_dnu_tau}
+    \begin{tabular}{|c|c|}
+        \hline
+        \(\tau\), uS & \(\Delta\nu\), kHz \\\hline
+        40                        & 25                  \\\hline
+        60                        & 16                  \\\hline
+        80                        & 13                  \\\hline
+        100                       & 10                  \\\hline
+        120                       & 8                   \\\hline
+        140                       & 7                   \\\hline
+        160                       & 6                   \\\hline
+        180                       & 5.5                \\\hline
+        200                       & 5                   \\\hline
+    \end{tabular}
+\end{table}
+
+Получим отсюда таблицу \( \Delta\nu(1/\tau) \):
+
+
+\begin{table}[H]
+    \centering
+    \label{tab_dnu_tau}
+    \begin{tabular}{|c|c|}
+        \hline
+        \(1/\tau\), kHz & \(\Delta\nu\), kHz \\\hline
+        25    & 25   \\\hline
+        16.67 & 16   \\\hline
+        12.5  & 13   \\\hline
+        10    & 10   \\\hline
+        8.33  & 8    \\\hline
+        7.14  & 7    \\\hline
+        6.25  & 6    \\\hline
+        5.56  & 5.50 \\\hline
+        5     & 5   \\\hline
+    \end{tabular}
+\end{table}
+
+Построим график получившейся зависимости:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{dnu_tau.png}
+    \caption{График \( \Delta\nu(1/\tau) \) для прямоугольных импульсов с \( \nu_{rep} = 1kHz \)}
+    \label{pic_dnu_tau}
+\end{figure}
+Зависимость:
+
+    \[ \Delta\nu = k \cdot \frac{1}{\tau} + b \]
+    \[ k = (0.998 \pm 0.016) \]
+    \[ b = (0.094 \pm 0.098) kHz\]
+
+Мы видим, что действительно выполняется соотношение определённости:
+\[ \Delta\nu\cdot\tau \simeq 1 \]
+
+\subsection{B. Исследование спктра периодической последовательности цугов гармонических колебаний}
+
+Установим частоту несущей \( \nu_0 = 25kHz \) и получим на экране осциллографа устойчивую картину цугов.
+
+Будем наблюдать, как изменяется вид спектра:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{cug_1.jpg}
+    \caption{Спектр при \( \nu_{rep} = 1kHz, \nu_0 = 25 kHz, \tau = 100uS \)}
+    \label{spec_cug_1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{cug_2.jpg}
+    \caption{Спектр при \( \nu_{rep} = 1kHz, \nu_0 = 25 kHz, \tau = 200uS \)} 
+    \label{spec_cug_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{cug_3.jpg}
+    \caption{Спектр при \( \nu_{rep} = 1kHz, \nu_0 = 10 kHz, \tau = 100uS \)} 
+    \label{spec_cug_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{cug_4.jpg}
+    \caption{Спектр при \( \nu_{rep} = 1kHz, \nu_0 = 40 kHz, \tau = 100uS \)} 
+    \label{spec_cug_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{cug_5.jpg}
+    \caption{Спектр при \( \nu_{rep} = 2kHz, \nu_0 = 30 kHz, \tau = 100uS \)}
+    \label{spec_cug_1}
+\end{figure}
+
+Исследуем зависимость \( \delta\nu (\nu_{rep}) \) при \( \tau = 100\) uS  и \(\nu_0 = 25\) kHz:
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \(\delta\nu\), kHz & \(\nu_{rep}\), kHz\\\hline
+        0.5 & 0.5 \\\hline
+        1   & 1   \\\hline
+        2   & 2   \\\hline
+        4   & 4   \\\hline
+        5   & 5   \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{dnu_frep.png}
+    \caption{График \( \delta\nu(\nu_{rep}) \) для прямоугольных импульсов с \( \nu_0 = 25\) kHz и \(\tau = 100\) uS}
+    \label{pic_dnu_tau}
+\end{figure}
+
+Завивисимость:
+
+\[ \delta\nu = k\cdot\nu_{rep} + b \]
+\[ k = (1.0 \pm 0.1) \]
+\[ b = (0.0 \pm 0.1) kHz\]
+
+Отсюда видно, что в данном случае тоже выполняется соотношение неопределённости
+\[ \delta\nu\cdot T \simeq 1 \]
+
+
+
 
 
 \section{Выводы}
