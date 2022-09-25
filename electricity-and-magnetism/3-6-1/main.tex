@@ -340,8 +340,50 @@
 \[ \delta\nu\cdot T \simeq 1 \]
 
 
+\subsection{C. Исследование спектра гармонических сигналов, модулированных по амплитуде}
+Установим частоту несущей \( \nu_0 = 25 \) kHz, частоту модуляции \( \nu_{mod} = 1 \) kHz.
+Получим спектр исследуемого сигнала. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{mod_1.jpg}
+    \caption{Спектр модулированного сигнала при \( m = 1 \).}
+    \label{spec_mod}
+\end{figure}
+
+Будем изучать зависимость отношения амплитуд \( k = A_s/A_m \) боковой и основной частоты от 
+параметра \(m = \left(A_{max} - A_{min}\right) / \left(A_{max} + A_{min}\right)\).
 
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \(A_{m}\), mV &  \(A_{s}\), mV & \(m\) & \(k\) \\\hline
+        322 & 16  & 0.1 & 0.050 \\\hline
+        322 & 47  & 0.3 & 0.146 \\\hline
+        322 & 75  & 0.5 & 0.233 \\\hline
+        322 & 107 & 0.7 & 0.332 \\\hline
+        322 & 139 & 0.9 & 0.431 \\\hline
+        322 & 153 & 1.0 & 0.475 \\\hline
+        \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{mod.png}
+    \caption{График \( k(m) \) для модулированного сигнала с \(\nu_0 = 25\) kHz, \(\nu_{mod} = 1\) kHz}
+    \label{pic_dnu_tau}
+\end{figure}
+
+Полученная зависимость:
+
+\[ k = a\cdot m + b \]
+\[ a = (0.474 \pm 0.004) \]
+\[ b = (0.001 \pm 0.001)\]
+
+Получаем, что 
+\[ \frac{k}{m} = 0.474 \pm 0.004 \]
+Что сходится с теоретическим значением 0.5
 
 \section{Выводы}
 \end{document}
