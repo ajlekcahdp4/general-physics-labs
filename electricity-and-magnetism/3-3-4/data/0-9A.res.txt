@@ -1,0 +1,19 @@
+Number of measurements: 8
+
+Measured values:
+      X       Y
+   0.27    0.07
+   0.54     0.1
+   0.81    0.17
+   1.08    0.22
+   1.35    0.28
+   1.62    0.31
+   1.89    0.33
+   2.03    0.34
+
+
+Coefficients of y = k*x + b:
+k = 0.162696
+b = 0.0324678
+k_dev = 0.00989218
+b_dev = 0.00588449
