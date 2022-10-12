@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{breqn}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{ {./data/images} }
+\author{Александр Романов Б01-107}
+\title {3.4.5 Петля гистерезиса(динамический метод)}
+\date{}
+
+\begin{document}
+\maketitle
+\section{Введение}
+\subsection{Цель работы}
+Изучение петель гистерезиса различных ферромагнитных материалов в переменных полях.
+\subsection{В работе используются}
+Автотрансформатор, реостат, интегрирующая ячейка, амперметор, вольтметр, резистор, делитель напряжения, электронный
+осциллограф, тороидальные образцы с двумя обмотками.
+
+\section{Работа}
+Запишем  некоторые характеристики образцов:
+\begin{table}[H]
+\centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+                    &Кремнистое железо  &Феррит &Пермаллой\\\hline
+        $N_0$         &20                 &42     &15     \\\hline
+        $N_u$         &200                &400    &300    \\\hline
+        $S$, cm^2     &2                  &3      &0.66   \\\hline
+        $2\pi R$, cm  &11                 &25     &14.1   \\\hline
+    \end{tabular}
+\end{table}
+Запишем некоторые параметры установки:
+\begin{table}[H]
+    \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            $R_0,\; \Omega$&0.2\\\hline
+            $R_u,\; k\Omega$&20\\\hline
+            $C_u,\; \mu F$  &20\\\hline
+        \end{tabular}
+    \end{table}
+
+\subsection{Калибровка канала X ЭО}
+
+Закоротим обмотку \(N_0\). Ток будет синусоидален. Амперметр А подключим на измерение эффективного тока \(I_{act}\),
+текущий через \(R_0\). Сигнал с этого сопротивления подаётся на вход X ЭО. В этом случае ширина горизонтальной
+развёртки на экране ЭО будет соответствовать удвоеной амплитуде напряжения на \(R_0\). Измерив длину \(2x = 7\; cells\)
+горизонтальной прямой на экране, ток \(I_{act} = 2.37\; A\) вычислим \(K_x\) - чувствительность канала X.
+
+\[ K_x = \frac{2R_0\sqrt{2}I_{act}}{2x} = 0.19\; V/cell\]
+
+\section{Выводы}
+
+\end{document}
