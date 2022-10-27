@@ -1,0 +1,14 @@
+Number of measurements: 6
+
+Measured values:
+      X       Y
+    400    4300
+    750    3400
+   1000    3200
+   1500    3100
+   2000    3060
+   2500    3050
+
+
+Coefficients of the polinom (from zero-coefficient to 2-coefficiient):
+4885.31 -2.13234 0.000574913 
