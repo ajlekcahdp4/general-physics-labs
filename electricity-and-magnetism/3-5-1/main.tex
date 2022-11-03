@@ -69,12 +69,16 @@
     \includegraphics[width=\textwidth]{V-A-1.png}
 \end{figure}
 
-Опроксимировав квадратом получим уравнения для уменьшения тока:
-\[ I_d = 46 - 2.7V_d + 0.04V_d^2 \]
-И для повышения тока:
-\[ I_d = 24 - 1.1V_d + 0.01V_d^2 \]
+Опроксимировав уравнением (\(y = kx + b\)) получим уравнения для уменьшения тока:
+\[ k = (-0.34 \pm 0.02)\; mA/V \]
+\[ b = (12.5 \pm 0.08)\; mA \]
 
-Как видно из графиков, кривые очень похожи.
+И для повышения тока:
+\[ k = (-0.40 \pm 0.03)\; mA/V \]
+\[ b = (14.1 \pm 0.09)\; mA \]
+
+Как видно из графиков, прямые очень похожи. По их наклону определим дифференциальное сопротивление разряда:
+\[ R_{diff} = \frac{dV}{dI} = (-2.5 \pm 0.18)\cdot 10^{3}\: \Omega \]
 
 \subsection{Зондовые характеристики}
 Уменьшим напряжение ВИП до 0. Переведём переключатель \(\text{П}_1\) в положение "Анод-II",
@@ -117,6 +121,25 @@
 \end{table}
 
 \subsubsection*{\(I_d = 5\: mA\):}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{V-A-5.png}
+\end{figure}
+
+\subsubsection*{\(I_d = 3\: mA\):}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{V-A-3.png}
+\end{figure}
+
+\subsubsection*{\(I_d = 1.5\: mA\):}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{V-A-1.5.png}
+\end{figure}
+
+По ВАХ для всех трёх значений \(I_d\) легко убедиться что участки кривой при больших напряжениях
+выходят на асимптоты.
 
 
 

@@ -1,16 +1,20 @@
-Number of measurements: 8
+Number of measurements: 9
 
 Measured values:
       X       Y
-     32     1.4
-   31.9     1.8
-   28.7    2.28
-   27.8     2.8
-   26.9    3.28
-   25.7     3.8
-   24.9    4.28
-   24.4     4.8
+     25    4.28
+   25.6     3.8
+   26.9    3.32
+   27.6     2.8
+   28.3    2.32
+  31.96     1.8
+   33.2    1.28
+   34.3     0.8
+     35    0.46
 
 
-Coefficients of the polinom (from zero-coefficient to 2-coefficiient):
-46.0976 -2.67402 0.0400944 
+Coefficients of y = k*x + b:
+k = -0.3405
+b = 12.4518
+k_dev = 0.0217236
+b_dev = 0.0792186
