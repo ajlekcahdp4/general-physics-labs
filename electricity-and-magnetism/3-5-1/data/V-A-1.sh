@@ -12,7 +12,5 @@ set xzeroaxis linestyle 3
 set yzeroaxis linestyle 3
 set xlabel "Vd, V" font "Times, 20"
 set ylabel "Id, mA" font "Times, 20"
-set xrange [23.64 : 32.76]
-set yrange [1.06 : 5.14]
 plot -0.3978 * x +14.1089  linestyle 1 title "increasing current", "V-A-1-down.txt" with points linestyle 2 title "decreasing current" ,\
     -0.3405 * x +12.4518 linestyle 4 title "decreasing current", "V-A-1-up.txt" with points linestyle 5 title "increasing current"
