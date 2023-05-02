@@ -1,0 +1,16 @@
+Number of measurements: 5
+
+Measured values:
+      X       Y
+      0     172
+      1     400
+      2     640
+      3     876
+      4    1116
+
+
+Coefficients of y = k*x + b:
+k = 236.4
+b = 168
+k_dev = 0.929516
+b_dev = 1.31453
